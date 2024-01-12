@@ -1,16 +1,10 @@
-# epsi_shop
+# EPSIShop
 
-A new Flutter project.
+Au cours de ma troisième année à l'EPSI, j'ai eu l'opportunité de plonger au cœur du développement d'applications mobiles en choisissant
+le framework Flutter. Mon projet, conçu dans le cadre de mes études, représente une étape cruciale de mon parcours académique.
 
-## Getting Started
+Utilisant Flutter, un framework open-source de Google, j'ai pu créer une application mobile innovante et fonctionnelle. Ce projet a été
+l'occasion de mettre en pratique les connaissances acquises au fil de mes années d'études et de développer des compétences solides en matière
+de conception logicielle, d'interface utilisateur et de programmation mobile.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### By Martin BINANT
