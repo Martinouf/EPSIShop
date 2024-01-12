@@ -7,7 +7,6 @@ import '../bo/cart.dart';
 
 class CartPage extends StatelessWidget {
   CartPage({super.key});
-  final List<Article> listArticles = <Article>[];
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +28,14 @@ class CartPage extends StatelessWidget {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
-              onPressed: () => context.go('/paiement'),
-              child: Text("Procéder au paiement"),
+          if (context.watch<Cart>().listArticles.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                onPressed: () => context.go('/paiement'),
+                child: Text("Procéder au paiement"),
+              ),
             ),
-          ),
         ],
       ),
     );
@@ -69,21 +69,22 @@ class ListCart extends StatelessWidget {
       Divider(),
       Expanded(
         child: ListView.builder(
-            itemCount: listArticles.length,
-            itemBuilder: (context, index) => ListTile(
-              title: Text(listArticles[index].nom),
-              subtitle: Text(listArticles[index].getPrixEuro()),
-              leading: Image.network(
-                listArticles[index].image,
-                width: 80,
-              ),
-              trailing: TextButton(
-                child: Text("SUPPRIMER"),
-                onPressed: () {
-                  context.read<Cart>().remove(listArticles[index]);
-                },
-              ),
-            )),
+          itemCount: listArticles.length,
+          itemBuilder: (context, index) => ListTile(
+            title: Text(listArticles[index].nom),
+            subtitle: Text(listArticles[index].getPrixEuro()),
+            leading: Image.network(
+              listArticles[index].image,
+              width: 80,
+            ),
+            trailing: TextButton(
+              child: Text("SUPPRIMER"),
+              onPressed: () {
+                context.read<Cart>().remove(listArticles[index]);
+              },
+            ),
+          ),
+        ),
       ),
     ],
   );
