@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
-import '../bo/article.dart';
 import '../bo/cart.dart';
 
 class PaiementPage extends StatelessWidget {
@@ -42,7 +43,7 @@ class PaiementPage extends StatelessWidget {
                           "Sous-Total",
                         ),
                         Text(
-                        '$context.read<cart>().getTotalPrice()',
+                            '${context.read<Cart>().getTotalPrice1()}'
                         ),
                       ],
                     ),
@@ -68,7 +69,7 @@ class PaiementPage extends StatelessWidget {
                           "TVA",
                         ),
                         Text(
-                          '${context.read<cart>().getTotalPrice() * 0.2.toStringAsFixed(2)}',
+                          '${(context.read<Cart>().getTotalPrice1() * 0.2).toStringAsFixed(2)}',
                         ),
                       ],
                     ),
@@ -81,7 +82,7 @@ class PaiementPage extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "${(context.read<Cart>().getTotalPrice() * 1.2).toStringAsFixed(2)}",
+                          "${(context.read<Cart>().getTotalPrice1() * 1.2).toStringAsFixed(2)}",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -132,6 +133,7 @@ class PaiementPage extends StatelessWidget {
                         Text(
                           "1 rue de ce code est pas facile",
                         ),
+                        IconButton(onPressed: null, icon: Icon(Icons.arrow_forward)),
                       ],
                     ),
                     SizedBox(height: 10),
@@ -170,10 +172,24 @@ class PaiementPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text("Confirmer l'achat"),
+            child: Container(
+              width: double.infinity,
+              child: Center(
+                child: Text("Confirmer l'achat"),
+              ),
+            )
           ),
         ],
       ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return IconButton(
+        icon: FaIcon(FontAwesomeIcons.gamepad),
+        onPressed: () { print("Pressed"); }
     );
   }
 }

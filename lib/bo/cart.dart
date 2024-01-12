@@ -11,6 +11,8 @@ class Cart with ChangeNotifier {
   List<Article> get listArticles => _listArticles;
   String getTotalPrice() =>
       "${listArticles.fold(0, (prev, art) => prev + art.prix) / 100}€";
+  double getTotalPrice1() =>
+      listArticles.fold(0, (prev, art) => prev + art.prix) / 100;
 
   void add(Article article) {
     _listArticles.add(article);
