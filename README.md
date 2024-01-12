@@ -1,5 +1,7 @@
 # EPSIShop
 
+## Pas eu le temps de finir.
+
 Au cours de ma troisième année à l'EPSI, j'ai eu l'opportunité de plonger au cœur du développement d'applications mobiles en choisissant
 le framework Flutter. Mon projet, conçu dans le cadre de mes études, représente une étape cruciale de mon parcours académique.
 
